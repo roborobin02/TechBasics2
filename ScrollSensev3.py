@@ -27,25 +27,29 @@ def create_new_page(root):
     exit_button.place(relx=0.6, rely=0.925, anchor="center")
 
 def create_mobilepage(root):
+
     clear_widgets(root)
+
     intro_frame = tk.Frame(root, bg="white", bd=0)
     intro_frame.place(relwidth=1, relheight=1)
-    image_file_path = "/Users/robinpaul/Desktop/TechBasics2.1/TechBasics2/images/ScrollSensev3Screenshot2.jpg"
+
+    image_file_path = "images/ScrollSensev3Screenshot2.jpg"
     set_background(intro_frame, image_file_path)
 
     back_button = tk.Button(root, text="GO BACK", font=("Comic Sans MS", 14, "bold"),
-                            command=lambda: create_startpage(root, image_file_path))
+                            command=lambda: create_startpage(root))
     back_button.place(relx=0.5, rely=0.925, anchor="center")
 
     exit_button = tk.Button(root, text="X", font=("Comic Sans MS", 14, "bold"),
                             command=root.destroy)
     exit_button.place(relx=0.6, rely=0.925, anchor="center")
-def create_startpage(root, image_file_path):
+def create_startpage(root):
     """This function creates the homepage with a background image and places a button at the bottom."""
     clear_widgets(root)
     intro_frame = tk.Frame(root, bg="white", bd=0)
     intro_frame.place(relwidth=1, relheight=1)
 
+    image_file_path = 'TechBasics2/images/ScrollSenseScreenshot1.jpg'
     set_background(intro_frame, image_file_path)
 
     intro_label = tk.Label(intro_frame, text="Welcome to the ScrollSense Prototype!\nPlease enter your name:",
@@ -68,5 +72,5 @@ def create_startpage(root, image_file_path):
 
 image_file_path = 'images/ScrollSenseScreenshot1.jpg'
 create_startpage(root, image_file_path)
-print('robin')
+
 root.mainloop()
