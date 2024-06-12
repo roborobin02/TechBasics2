@@ -8,15 +8,13 @@ root.title("ScrollSense")
 screen_width = 350
 screen_height = 750
 
-# so that you cant resize the scren
+# so that you cant resize the screen
 root.minsize(screen_width, screen_height)
 root.maxsize(screen_width, screen_height)
 
-
-# main script content
 def create_new_page(root):
     """This function creates a new page that will clear all the widgets,
-    change the background colour, and place a button to go back."""
+    change the background color, and place a button to go back."""
     clear_widgets(root)
     root.configure(background="pink")
 
@@ -28,13 +26,13 @@ def create_new_page(root):
                             command=root.destroy)
     exit_button.place(relx=0.6, rely=0.925, anchor="center")
 
-
 def create_startpage(root, image_file_path):
     """This function creates the homepage with a background image and places a button at the bottom."""
-    set_background(root, image_file_path)
-
+    clear_widgets(root)
     intro_frame = tk.Frame(root, bg="white", bd=0)
     intro_frame.place(relwidth=1, relheight=1)
+
+    set_background(intro_frame, image_file_path)
 
     intro_label = tk.Label(intro_frame, text="Welcome to the ScrollSense Prototype!\nPlease enter your name:",
                            bg="white", font=("Comic Sans MS", 14))
@@ -53,7 +51,6 @@ def create_startpage(root, image_file_path):
     newpage_button = tk.Button(root, text="CLICK HERE TO GO TO THE NEXT PAGE", font=("Ubuntu", 14, "bold"),
                                command=lambda: create_new_page(root))
     newpage_button.place(relx=0.5, rely=0.925, anchor="center")
-
 
 image_file_path = 'images/ScrollSenseScreenshot1.jpg'
 create_startpage(root, image_file_path)
