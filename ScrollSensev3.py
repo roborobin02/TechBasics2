@@ -54,5 +54,5 @@ def create_startpage(root, image_file_path):
 
 image_file_path = 'images/ScrollSenseScreenshot1.jpg'
 create_startpage(root, image_file_path)
-
+print('robin')
 root.mainloop()
