@@ -49,7 +49,7 @@ def create_startpage(root):
     intro_frame = tk.Frame(root, bg="white", bd=0)
     intro_frame.place(relwidth=1, relheight=1)
 
-    image_file_path = 'TechBasics2/images/ScrollSenseScreenshot1.jpg'
+    image_file_path = 'images/ScrollSenseScreenshot1.jpg'
     set_background(intro_frame, image_file_path)
 
     intro_label = tk.Label(intro_frame, text="Welcome to the ScrollSense Prototype!\nPlease enter your name:",
@@ -70,7 +70,6 @@ def create_startpage(root):
                                command=lambda: create_mobilepage(root))
     newpage_button.place(relx=0.5, rely=0.925, anchor="center")
 
-image_file_path = 'images/ScrollSenseScreenshot1.jpg'
-create_startpage(root, image_file_path)
+create_startpage(root)
 
 root.mainloop()
