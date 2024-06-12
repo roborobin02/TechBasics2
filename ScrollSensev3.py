@@ -43,6 +43,20 @@ def create_mobilepage(root):
     exit_button = tk.Button(root, text="X", font=("Comic Sans MS", 14, "bold"),
                             command=root.destroy)
     exit_button.place(relx=0.6, rely=0.925, anchor="center")
+
+    forward_button = tk.button(root, text="Instagram", font=("Ubuntu", 14, "bold"),
+                        command= lambda: create_loadingpage())
+    forward_button.place(relx=0.5, rely=0.5, anchor="center")
+def create_loadingpage(root):
+
+    clear_widgets(root)
+
+    intro_frame = tk.Frame(root, bg="white", bd=0)
+    intro_frame.place(relwidth=1, relheight=1)
+
+    image_file_path = "images/images/ScrollSensev3Loading.gif"
+    set_background(intro_frame, image_file_path)
+
 def create_startpage(root):
     """This function creates the homepage with a background image and places a button at the bottom."""
     clear_widgets(root)
